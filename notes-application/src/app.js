@@ -7,7 +7,7 @@ app.use(express.json())
 
 app.post('/notes', async (req, res) => {
 
-    const data = req.body;
+    const data = req.body; 
     await notemodel.create({
         title: data.title,
         description: data.description
