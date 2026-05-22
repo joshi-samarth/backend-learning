@@ -48,7 +48,7 @@ async function login(req, res) {
         });
 
         if (!user) {
-            return res.status(401).json({ message: "invalid creditionlas" })
+            return res.status(401).json({ message: "invalid credentials" })
         }
 
         const ispasswordmatch = await bcrypt.compare(password, user.password);
@@ -69,6 +69,7 @@ async function login(req, res) {
     }
     catch (err) {
         console.log(err);
+        res.status(500).json({ message: "error logging in user", error: err.message });
     }
 }
 
