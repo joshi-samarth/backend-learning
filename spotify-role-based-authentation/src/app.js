@@ -4,6 +4,7 @@ const authrouter = require('./routes/auth.routes')
 const musicrouter = require('./routes/music.routes')
 
 const app = express();
+
 app.use(express.json())
 app.use(cookieparser())
 app.use('/api/auth', authrouter)
